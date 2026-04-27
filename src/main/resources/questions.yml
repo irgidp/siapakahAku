@@ -1,0 +1,277 @@
+# 30 Minecraft Quiz Questions
+# Difficulty: Medium - Answerable at clue 2-3
+# Strategy: Mix of mobs, blocks, items, and game mechanics
+
+questions:
+  nether:
+    clue1: "Di sini, waktu tidak berjalan seperti dunia yang kamu kenal."
+    clue2: "Lautan api adalah pemandangan biasa, dan kompas tidak akan bekerja."
+    clue3: "Tempat di mana tidur adalah sebuah ledakan fatal."
+    answer: "nether"
+
+  ender_dragon:
+    clue1: "Aku adalah penguasa dari pulau yang melayang di kehampaan."
+    clue2: "Kekuatanku berasal dari kristal yang bertengger di pilar-pilar tinggi."
+    clue3: "Kematianku adalah satu-satunya cara bagimu untuk membaca pesan panjang Sang Pencipta."
+    answer: "ender dragon"
+
+  enderman:
+    clue1: "Aku adalah pengembara antar dimensi yang membenci tatapan mata."
+    clue2: "Tubuhku panjang, gelap, dan aku sering memindahkan kepingan dunia tanpa izin."
+    clue3: "Air adalah racun bagiku, dan aku akan lenyap dalam sekejap jika menyentuhnya."
+    answer: "enderman"
+
+  creeper:
+    clue1: "Keberadaanku bermula dari kesalahan koding sebuah bentuk babi."
+    clue2: "Aku tidak bersuara, sampai akhirnya aku mendesis di belakang punggungmu."
+    clue3: "Wajahku adalah ikon dari permainan ini, namun kehadiranku menghancurkan segalanya."
+    answer: "creeper"
+
+  phantom:
+    clue1: "Aku adalah hukuman bagi mereka yang lupa akan istirahat."
+    clue2: "Aku turun dari langit malam dengan sayap yang robek-robek."
+    clue3: "Aku tidak akan mengganggumu jika kamu tidur setidaknya sekali dalam tiga hari."
+    answer: "phantom"
+
+  shulker:
+    clue1: "Aku adalah kotak yang hidup, diam namun mematikan."
+    clue2: "Peluruku tidak membunuhmu secara langsung, tapi membawamu ke awan."
+    clue3: "Aku adalah satu-satunya alasan mengapa pemain bisa membawa ratusan barang dalam satu slot."
+    answer: "shulker"
+
+  guardian:
+    clue1: "Aku adalah mata satu yang menjaga harta karun di kedalaman sunyi."
+    clue2: "Tubuhku berduri dan aku menyerang menggunakan cahaya panas dari mataku."
+    clue3: "Aku akan memburu siapa pun yang berenang di sekitar struktur Monument."
+    answer: "guardian"
+
+  villager:
+    clue1: "Aku adalah penduduk tanpa suara yang hanya tahu cara bertukar."
+    clue2: "Pekerjaanku ditentukan oleh meja yang ada di depanku."
+    clue3: "Zamrud (Emerald) adalah satu-satunya bahasa yang aku mengerti."
+    answer: "villager"
+
+  witch:
+    clue1: "Aku adalah pengasingan dari desa yang memilih jalan kegelapan."
+    clue2: "Botol-botol kaca adalah senjataku untuk meracuni nyawamu."
+    clue3: "Aku tertawa saat melemparkan ramuan, dan aku hidup di pondok kayu di atas rawa."
+    answer: "witch"
+
+  piglin:
+    clue1: "Aku adalah pemuja logam kuning yang sangat tempramental."
+    clue2: "Aku akan menyerangmu jika kamu tidak mengenakan pakaian yang serasi denganku."
+    clue3: "Lemparkan kepingan emas, dan aku akan memberimu barang dari dunia bawah."
+    answer: "piglin"
+
+  hoglin:
+    clue1: "Aku adalah binatang buas yang menghuni hutan merah yang membara."
+    clue2: "Aku sangat benci dengan bau jamur biru (Warped Fungus)."
+    clue3: "Aku adalah satu-satunya sumber makanan berdaging di dunia bawah."
+    answer: "hoglin"
+
+  ghast:
+    clue1: "Suaraku terdengar seperti tangisan bayi yang tersiksa di angkasa."
+    clue2: "Aku adalah ubur-ubur raksasa yang melayang di udara panas."
+    clue3: "Bola apiku bisa kamu pukul balik jika refleksmu cukup cepat."
+    answer: "ghast"
+
+  blaze:
+    clue1: "Aku adalah api yang berputar di dalam benteng terkutuk."
+    clue2: "Tubuhku terdiri dari batang-batang yang melayang tanpa nyawa."
+    clue3: "Tanpa tongkat (Rod) dari tubuhku, kamu tidak akan pernah bisa membuat ramuan."
+    answer: "blaze"
+
+  cave_spider:
+    clue1: "Aku lebih kecil dari saudaraku, tapi jauh lebih menyakitkan."
+    clue2: "Aku tinggal di lorong-lorong sempit yang penuh dengan jaring buatan manusia (Mineshaft)."
+    clue3: "Gigitanku tidak langsung membunuh, tapi membuat duniamu terasa mual dan hijau."
+    answer: "cave spider"
+
+  spider:
+    clue1: "Aku memiliki delapan mata yang bersinar merah di kegelapan."
+    clue2: "Dinding tegak lurus bukanlah penghalang bagiku untuk mengejarmu."
+    clue3: "Di bawah sinar matahari aku tenang, tapi di kegelapan aku adalah pemangsa."
+    answer: "spider"
+
+  slime:
+    clue1: "Semakin kamu mencoba membunuhku, semakin banyak aku muncul."
+    clue2: "Aku melompat dengan suara 'splat' di kedalaman chunk tertentu."
+    clue3: "Cairan tubuhku yang lengket digunakan untuk membuat blok yang bisa menarik benda."
+    answer: "slime"
+
+  magma_cube:
+    clue1: "Aku adalah pegas yang tercipta dari batu pijar."
+    clue2: "Saat aku melompat, tubuhku terbelah memperlihatkan inti yang panas."
+    clue3: "Aku adalah versi panas dari makhluk gelatin yang hidup di dunia atas."
+    answer: "magma cube"
+
+  zombie:
+    clue1: "Aku adalah pantulan diri pemain yang sudah kehilangan jiwa."
+    clue2: "Sinar matahari adalah musuh terbesarku yang membuatku terbakar."
+    clue3: "Aku sangat menyukai pintu kayu dan otak para penduduk desa."
+    answer: "zombie"
+
+  skeleton:
+    clue1: "Aku adalah sisa-sisa prajurit yang hanya menyisakan tulang-belulang."
+    clue2: "Suara kertakan tulangku adalah tanda bahwa anak panah akan segera meluncur."
+    clue3: "Jika aku mati di tangan Creeper yang bermuatan, aku akan memberikan kepalaku."
+    answer: "skeleton"
+
+  drowned:
+    clue1: "Aku adalah mereka yang terlupakan di dasar samudera."
+    clue2: "Aku sering memegang senjata kuno bercabang tiga (Trident)."
+    clue3: "Aku berasal dari mereka yang kehabisan napas di bawah air."
+    answer: "drowned"
+
+  goat:
+    clue1: "Aku adalah pendaki ulung yang tinggal di puncak dunia yang sunyi."
+    clue2: "Aku akan menyerudukmu hingga jatuh ke jurang jika kamu diam terlalu lama."
+    clue3: "Susu dan tanduk adalah apa yang bisa kamu ambil dariku."
+    answer: "goat"
+
+  allay:
+    clue1: "Berikan aku satu benda, maka aku akan mencarikan saudara-saudaranya untukmu."
+    clue2: "Aku adalah roh biru kecil yang terkurung di dalam penjara kayu (Pillager Outpost)."
+    clue3: "Musik dari Note Block adalah hal yang paling membuatku bersemangat."
+    answer: "allay"
+
+  warden:
+    clue1: "Aku adalah detak jantung dari kota yang sudah lama mati."
+    clue2: "Mataku tidak berguna, namun telingaku bisa mendengar nafasmu."
+    clue3: "Jangan biarkan sensor di sekitarku bergetar empat kali, atau aku akan muncul."
+    answer: "warden"
+
+  iron_golem:
+    clue1: "Aku tercipta dari pengorbanan blok logam dan sebuah ukiran labu."
+    clue2: "Aku adalah pelindung setia bagi mereka yang lemah dan berhidung besar."
+    clue3: "Bunganya yang berwarna merah (Poppy) adalah simbol kasih sayangku."
+    answer: "iron golem"
+
+  snow_golem:
+    clue1: "Aku adalah makhluk yang meninggalkan jejak putih ke mana pun aku pergi."
+    clue2: "Aku menyerang dengan bola-bola dingin yang tidak memberikan luka."
+    clue3: "Aku mengenakan labu untuk menutupi wajah asliku yang lucu."
+    answer: "snow golem"
+
+  strider:
+    clue1: "Aku makhluk yang dapat ditunggangi"
+    clue2: "Aku hidup di dunia yang penuh bahaya"
+    clue3: "Berikan aku jamur untuk mengendalikan perjalananku."
+    answer: "strider"
+
+  husk:
+    clue1: "Aku hidup di dessert dan lahir pada versi 1.10"
+    clue2: "Aku bisa menyebabkan efek kelaparan"
+    clue3: "Aku meninggalkan daging busuk dan pasir saat terbunuh."
+    answer: "husk"
+
+  axolotl:
+    clue1: "Aku makhluk yang hidup di air tawar tenang."
+    clue2: "Aku dapat ditangkap menggunakan bucket air."
+    clue3: "Warnaku bisa pink putih biru atau cokelat alami keindahan."
+    answer: "axolotl"
+
+  wither:
+    clue1: "Aku merupakan salah satu mob mengerikan."
+    clue2: "Aku tidak bisa spawn natural"
+    clue3: "Aku dapat merusak hampir semua blok saat bertransformasi dan memberikan effect menyakitkan"
+    answer: "wither"
+
+  sniffer:
+    clue1: "Aku adalah saksi bisu dari masa lalu yang telah sirna."
+    clue2: "Aku tidak lahir secara alami, melainkan ditemukan dalam bentuk benda keras."
+    clue3: "Hidungku adalah alat terbaik untuk menemukan benih kuno di dalam tanah."
+    answer: "sniffer"
+
+  totem:
+    clue1: "Aku adalah benda kecil yang sangat egois karena hanya ingin digenggam."
+    clue2: "Banyak pemain mencariku di Mansion atau saat penyerangan desa (Raid)."
+    clue3: "Aku akan hancur demi memberimu kesempatan hidup kedua saat kamu sekarat."
+    answer: "totem"
+
+  mace:
+    clue1: "Semakin tinggi kamu melompat, semakin besar kekuatanku."
+    clue2: "Aku bisa membunuh mob terkuat sekalipun hanya dengan satu serangan."
+    clue3: "Aku lahir di versi 1.21 dan cukup sulit untuk mendapatkanku."
+    answer: "mace"
+
+  lodestone:
+    clue1: "Aku adalah titik pusat yang tidak akan pernah berpindah."
+    clue2: "Aku dibuat menggunakan blok berharga dari kedalaman Nether."
+    clue3: "Gunakan kompas padaku agar kamu tidak akan pernah tersesat lagi."
+    answer: "lodestone"
+
+  endermite:
+    clue1: "Keberadaanku adalah sebuah kecelakaan dari sebuah perpindahan."
+    clue2: "Aku adalah makhluk terkecil yang sangat dibenci oleh mahkluk lain."
+    clue3: "Aku muncul sesekali ketika kamu melemparkan sesuatu."
+    answer: "endermite"
+
+  breeze:
+    clue1: "Aku bergerak lincah dan sulit untuk disentuh."
+    clue2: "Aku adalah penghuni setia sebuah structure yang menyerang dengan udara."
+    clue3: "Tembakanku bisa memantul dan mengaktifkan tombol atau pintu di sekitarku."
+    answer: "breeze"
+
+  bogged:
+    clue1: "Aku adalah variasi dari sosok yang sudah lama membusuk."
+    clue2: "Tubuhku ditumbuhi oleh jamur dan lumut karena hidup di rawa."
+    clue3: "Anak panah yang aku tembakkan mengandung racun yang mematikan."
+    answer: "bogged"
+
+  parched:
+    clue1: "Aku adalah kondisi yang membuatmu merasa sangat tidak nyaman."
+    clue2: "Aku muncul di update terbaru berkaitan dengan tantangan di sebuah structure baru."
+    clue3: "Efekku membuat pemain tidak bisa meregenerasi darah dengan makanan."
+    answer: "parched"
+
+  stray:
+    clue1: "Aku adalah sisa-sisa kehidupan yang terjebak dalam kedinginan abadi."
+    clue2: "Aku mengenakan pakaian compang-camping dan hidup di bioma salju."
+    clue3: "Anak panahku akan membuat gerakanmu menjadi sangat lambat (Slowness)."
+    answer: "stray"
+
+  vex:
+    clue1: "Aku kecil, terbang, dan bisa menembus segala rintangan fisik dan bisa menyakitimu."
+    clue2: "Aku dipanggil oleh sosok berbaju gelap menggunakan sihir."
+    clue3: "Aku memegang pedang besi dan akan menghilang setelah beberapa saat."
+    answer: "vex"
+
+  ravager:
+    clue1: "Aku adalah mesin penghancur hidup yang sangat berat."
+    clue2: "Aku dapat ditunggangi oleh sebuah kelompok saat menyerang desa."
+    clue3: "Aku bisa menghancurkan tanaman dan memberikan efek knockback besar dengan serudukanku."
+    answer: "ravager"
+
+  bell:
+    clue1: "Suaraku adalah pertanda bahwa bahaya sedang mendekat."
+    clue2: "Aku biasanya terletak di pusat desa atau tempat berkumpulnya Villager."
+    clue3: "Jika aku dibunyikan saat Raid, para penyerang akan terlihat bersinar (Glow)."
+    answer: "bell"
+
+  conduit:
+    clue1: "Aku adalah jantung dari peradaban yang tenggelam."
+    clue2: "Aku membutuhkan cangkang Nautilus dan Heart of the Sea untuk diciptakan."
+    clue3: "Aku memberikan kekuatan bernapas dan melihat dengan jelas di dalam air."
+    answer: "conduit"
+
+  dripstone:
+    clue1: "Aku bisa menjadi tombak dari atas atau duri dari bawah."
+    clue2: "Aku terbentuk dari tetesan air yang membeku menjadi batu dalam waktu lama."
+    clue3: "Jangan berdiri di bawahku jika aku sedang retak, atau aku akan menjatuhimu."
+    answer: "dripstone"
+
+# Pijakan (Foothold) Configuration
+# 5 lanes x 11 positions per lane (0-10)
+
+spawn_config:
+  world: "world"
+  base_location:
+    x: 0.0
+    y: 64.0
+    z: 0.0
+  lane_offset: 5
+  position_offset: 4
+  total_lanes: 5
+  positions_per_lane: 11
+

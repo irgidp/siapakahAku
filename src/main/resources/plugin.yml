@@ -1,0 +1,63 @@
+name: siapakahAku
+version: '${version}'
+description: Minigame Reality Show - Tebak Siapakah Aku
+author: Corazon
+
+main: yt.corazonid.siapakahAku.SiapakahAku
+api-version: '1.21.11'
+load: POSTWORLD
+
+commands:
+  regis:
+    description: Register a player to an available lane
+    usage: /regis <playername>
+    permission: siapakahaku.moderator
+  unregis:
+    description: Unregister a player and free their lane
+    usage: /unregis <playername>
+    permission: siapakahaku.moderator
+  listplayer:
+    description: List all registered players
+    usage: /listplayer
+    permission: siapakahaku.moderator
+  startboard:
+    description: Spawn the 5x10 board and teleport all players to start
+    usage: /startboard
+    permission: siapakahaku.moderator
+  startgame:
+    description: Start the game and freeze player movement
+    usage: /startgame
+    permission: siapakahaku.moderator
+  setsoal:
+    description: Load a question from config
+    usage: /setsoal <question_id>
+    permission: siapakahaku.moderator
+  clue1:
+    description: Display the first clue
+    usage: /clue1
+    permission: siapakahaku.moderator
+  clue2:
+    description: Display the second clue
+    usage: /clue2
+    permission: siapakahaku.moderator
+  clue3:
+    description: Display the third clue
+    usage: /clue3
+    permission: siapakahaku.moderator
+  jawaban:
+    description: Reveal the answer
+    usage: /jawaban
+    permission: siapakahaku.moderator
+  cekposisi:
+    description: Return player to their current pijakan
+    usage: /cekposisi
+    permission: siapakahaku.player
+
+permissions:
+  siapakahaku.moderator:
+    description: Allow moderator commands
+    default: op
+  siapakahaku.player:
+    description: Allow player commands (cekposisi)
+    default: true
+
