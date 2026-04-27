@@ -50,9 +50,9 @@ public class ClueCommand implements CommandExecutor {
         // Update current clue number
         gameManager.setCurrentClueNumber(clueNumber);
 
-        // Broadcast title to all players
-        TitleUtil.broadcastTitle(sender.getServer(), "§6CLUE " + clueNumber, "§f" + clueText);
-        sender.sendMessage("§a✓ Clue " + clueNumber + " ditampilkan");
+        // Broadcast title to all players (with longer display time and better colors)
+        TitleUtil.broadcastClueTitle(sender.getServer(), "§6CLUE " + clueNumber, clueText);
+        sender.sendMessage("§a✓ Clue " + clueNumber + " ditampilkan (7 detik)");
 
         return true;
     }

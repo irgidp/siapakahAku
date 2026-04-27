@@ -32,6 +32,20 @@ public class ChatListener implements Listener {
             return;
         }
 
+        // FIX #1: Check if answer already revealed - BLOCK answering
+        if (gameManager.isAnswerRevealed()) {
+            event.setCancelled(true);
+            player.sendMessage("§c✗ Jawaban sudah di-reveal! Tunggu soal berikutnya (/setsoal)");
+            return;
+        }
+
+        // FIX #2: Check if player already won in this game - BLOCK answering
+        if (gameManager.hasPlayerWon(playerName)) {
+            event.setCancelled(true);
+            player.sendMessage("§a✓ Anda sudah menang! Selamat menonton pemain lain bermain.");
+            return;
+        }
+
         // RONDE SYSTEM: Check if player already answered correctly this round
         if (gameManager.hasPlayerAnsweredCorrectly(playerName)) {
             // Player sudah jawab benar - ignore jawaban mereka

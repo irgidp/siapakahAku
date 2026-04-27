@@ -32,6 +32,10 @@ public class GameManager {
     private final Map<String, Integer> wrongAnswerCountPerPlayer = new HashMap<>();  // Track wrong answer count per player per clue
     private int currentClueNumber = 0;  // Track clue mana sekarang (1, 2, 3)
 
+    // Winner tracking system
+    private final List<String> winners = new ArrayList<>();  // Track pemenang (rank 1-5)
+    private final Map<String, Integer> playerWinRank = new HashMap<>();  // Player -> rank (1-5)
+
     public GameManager(SiapakahAku plugin) {
         this.plugin = plugin;
         loadQuestions();
@@ -214,27 +218,61 @@ public class GameManager {
     }
 
     /**
-     * Announce winner and end game
+     * Check if player already won in this game
+     */
+    public boolean hasPlayerWon(String playerName) {
+        return playerWinRank.containsKey(playerName);
+    }
+
+    /**
+     * Announce winner (without stopping game - continue for other players)
      */
     public void announceWinner(String playerName) {
         Player player = Bukkit.getPlayer(playerName);
-        if (player != null) {
+        if (player != null && !hasPlayerWon(playerName)) {
+            int rank = winners.size() + 1;  // 1-5
+            winners.add(playerName);
+            playerWinRank.put(playerName, rank);
+
             Bukkit.broadcastMessage("§6");
-            Bukkit.broadcastMessage("§6╔═══════════════════╗");
-            Bukkit.broadcastMessage("§6║     PEMENANG!      ║");
-            Bukkit.broadcastMessage("§6║  " + playerName + "  ║");
-            Bukkit.broadcastMessage("§6╚═══════════════════╝");
+            Bukkit.broadcastMessage("§6╔════════════════════════════╗");
+            Bukkit.broadcastMessage("§6║   PEMENANG KE-" + rank + "   ║");
+            Bukkit.broadcastMessage("§6║       " + playerName + "        ║");
+            Bukkit.broadcastMessage("§6╚════════════════════════════╝");
             Bukkit.broadcastMessage("§6");
 
-            TitleUtil.broadcastTitle(player.getServer(), "§6★ PEMENANG ★", "§e" + playerName);
+            TitleUtil.broadcastWinnerTitle(player.getServer(), "§6★ PEMENANG KE-" + rank + " ★", "§e" + playerName);
 
-            // Spawn fireworks at player location
-            for (int i = 0; i < 10; i++) {
-                new org.bukkit.util.Vector(Math.random() - 0.5, 0.5, Math.random() - 0.5);
+            // Check if semua 5 player atau 4 player sudah menang
+            if (winners.size() >= 4) {  // 4 winners = game over
+                endAllGame();
             }
-
-            stopGame();
         }
+    }
+
+    /**
+     * End game setelah semua pemenang ditentukan
+     */
+    public void endAllGame() {
+        gameActive = false;
+        Bukkit.broadcastMessage("§b");
+        Bukkit.broadcastMessage("§b╔════════════════════════════╗");
+        Bukkit.broadcastMessage("§b║   GAME OVER - TOP 4 ✓      ║");
+        for (int i = 0; i < Math.min(4, winners.size()); i++) {
+            Bukkit.broadcastMessage("§b║ #" + (i+1) + " " + winners.get(i));
+        }
+        if (winners.size() < 5) {
+            String lastPlayer = "";
+            for (GamePlayer gp : registeredPlayers.values()) {
+                if (!playerWinRank.containsKey(gp.getPlayerName())) {
+                    lastPlayer = gp.getPlayerName();
+                    break;
+                }
+            }
+            Bukkit.broadcastMessage("§b║ #5 " + lastPlayer);
+        }
+        Bukkit.broadcastMessage("§b╚════════════════════════════╝");
+        Bukkit.broadcastMessage("§b");
     }
 
     /**
@@ -381,6 +419,21 @@ public class GameManager {
      */
     public int getCurrentClueNumber() {
         return currentClueNumber;
+    }
+
+    /**
+     * Check if answer already revealed untuk soal ini
+     */
+    public boolean isAnswerRevealed() {
+        return answerRevealed;
+    }
+
+    /**
+     * Reset winners tracking untuk game baru (jika moderator ingin restart)
+     */
+    public void resetWinnersTracking() {
+        winners.clear();
+        playerWinRank.clear();
     }
 }
 
