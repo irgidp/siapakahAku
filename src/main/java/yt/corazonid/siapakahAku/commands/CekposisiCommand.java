@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import yt.corazonid.siapakahAku.manager.GameManager;
 import yt.corazonid.siapakahAku.model.GamePlayer;
+import java.util.Collection;
 
 public class CekposisiCommand implements CommandExecutor {
     private final GameManager gameManager;
@@ -18,63 +19,47 @@ public class CekposisiCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        // Check if moderator - if not moderator, deny
+        // FIX: Hanya moderator yang dapat menggunakan command ini
         if (!sender.hasPermission("siapakahaku.moderator")) {
             sender.sendMessage("§c✗ Hanya moderator yang dapat menggunakan command ini!");
             return true;
         }
-        Player moderator = (Player) sender;
-        Player targetPlayer = null;
-        String targetPlayerName = null;
 
-        // FIX #4: If moderator provides argument, teleport that specific player
-        if (args.length > 0) {
-            targetPlayerName = args[0];
-            targetPlayer = Bukkit.getPlayer(targetPlayerName);
-            if (targetPlayer == null) {
-                moderator.sendMessage("§c✗ Player '" + targetPlayerName + "' tidak ditemukan!");
-                return true;
+        // Get all registered players
+        Collection<GamePlayer> registeredPlayers = gameManager.getRegisteredPlayers();
+
+        if (registeredPlayers.isEmpty()) {
+            sender.sendMessage("§c✗ Tidak ada player yang terdaftar!");
+            return true;
+        }
+
+        // Teleport semua player ke pijakan masing-masing
+        int teleportedCount = 0;
+        for (GamePlayer gamePlayer : registeredPlayers) {
+            String playerName = gamePlayer.getPlayerName();
+            Player player = gamePlayer.getPlayer();
+
+            if (player == null || !player.isOnline()) {
+                continue;  // Skip offline players
             }
-        } else {
-            // No argument - teleport the moderator themselves
-            targetPlayer = moderator;
-            targetPlayerName = moderator.getName();
+
+            // Get player's current pijakan location
+            Location pijakanLoc = gameManager.getPlayerLocation(playerName);
+            if (pijakanLoc == null) {
+                sender.sendMessage("§c⚠ " + playerName + " - pijakan location tidak ditemukan!");
+                continue;
+            }
+
+            // Teleport player to pijakan
+            player.teleport(pijakanLoc);
+            teleportedCount++;
         }
 
-        // Check if target player is registered
-        if (!gameManager.isPlayerRegistered(targetPlayerName)) {
-            moderator.sendMessage("§c✗ Player '" + targetPlayerName + "' tidak terdaftar dalam game ini!");
-            return true;
-        }
-
-        GamePlayer gamePlayer = gameManager.getGamePlayer(targetPlayerName);
-        if (gamePlayer == null) {
-            moderator.sendMessage("§c✗ Error: Player data tidak ditemukan!");
-            return true;
-        }
-
-        // Get player's current pijakan location
-        Location pijakanLoc = gameManager.getPlayerLocation(targetPlayerName);
-        if (pijakanLoc == null) {
-            moderator.sendMessage("§c✗ Pijakan location tidak ditemukan! Pastikan /startboard sudah dijalankan.");
-            return true;
-        }
-
-        // Teleport player back to pijakan
-        targetPlayer.teleport(pijakanLoc);
-
-        if (args.length > 0) {
-            // Moderator teleported someone else
-            moderator.sendMessage("§a✓ " + targetPlayerName + " di-teleport kembali ke pijakan!");
-            moderator.sendMessage(String.format("§f  Lane %d  |  Posisi %d/10",
-                gamePlayer.getLaneNumber(), gamePlayer.getScore()));
-            targetPlayer.sendMessage("§a✓ Anda di-teleport moderator kembali ke pijakan!");
-        } else {
-            // Moderator teleported themselves
-            moderator.sendMessage("§a✓ Anda di-teleport kembali ke pijakan!");
-            moderator.sendMessage(String.format("§f  Lane %d  |  Posisi %d/10",
-                gamePlayer.getLaneNumber(), gamePlayer.getScore()));
-        }
+        // Broadcast result
+        sender.sendMessage("§a");
+        sender.sendMessage("§a✓ Cekposisi: " + teleportedCount + " player di-teleport ke pijakan masing-masing!");
+        sender.sendMessage("§a");
+        Bukkit.broadcastMessage("§6ℹ [Moderator] Semua player di-teleport ke pijakan masing-masing!");
 
         return true;
     }
